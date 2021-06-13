@@ -164,7 +164,7 @@ if userge.has_bot:
         return not bool(found)
 
     def default_owner_start(from_user):
-        start_msg = f"Hello Master **{from_user.flname}** !\n"
+        start_msg = f"Ara Ara **{from_user.flname}** !\n"
         btns = [
             [InlineKeyboardButton("➕  ADD TO GROUP", callback_data="add_to_grp")],
         ]
@@ -181,23 +181,19 @@ if userge.has_bot:
         else:
             start_msg = f"""
 Hello 👋 {from_user.fname},
-Nice To Meet You !, I'm <b>{bot_.fname}</b> A Bot.
 
-        <b><i>Powered by</i> [USERGE-X](https://t.me/x_xtests)
+My Name iz <b>{bot_.fname}</b> A Bot.
 
-My Master is : {owner_.flname}</b>
+My Master iz : {owner_.flname}</b>
 """
             if Config.BOT_FORWARDS:
-                start_msg += "<b>\n📌 NOTE:</b>\nYou can 📨 <b>Send Message</b> here to contact my <b>Master.</b>"
+                start_msg += "<b>\n📌 NOTE:</b>\nYou can 📨 <b>Send Message</b> Here to Contact Moy <b>Master.</b>"
             contact_url = (
-                f"https://t.me/{owner_.uname}"
-                if owner_.uname
-                else f"tg://user?id={owner_.id}"
+                f"https://t.me/{bot_.uname}"
             )
             btns = [
                 [
                     InlineKeyboardButton("👤  CONTACT", url=contact_url),
-                    InlineKeyboardButton("⭐️  REPO", url=Config.UPSTREAM_REPO),
                 ]
             ]
         try:
